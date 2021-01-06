@@ -1,0 +1,10 @@
+<h1 align="center">Biryani Zone</h1>
+<h1>Recipes</h1>
+<h2>Items</h2>
+{% if context %}
+{% for each in context %}
+<a href = "{% url 'recipe:detail' each.id %}">{{ each.name }}</a>
+{% endfor %}
+{% endif %}
+<br>
+<a href="{% url 'recipe:create' %}">Create</a>
